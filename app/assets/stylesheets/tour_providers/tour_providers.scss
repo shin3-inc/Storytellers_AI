@@ -1,0 +1,59 @@
+// Place all the styles related to the tour_providers/TourProviders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.tour_provider {
+  width: 100%;
+  color: #0B6480;
+  padding-left: 10%;
+  padding-right:  10%;
+
+  &__row {
+	padding-top: 5px;
+	padding-bottom: 5px;
+  }
+
+  &__title {
+	padding-top: 30px;
+	padding-bottom: 20px;
+  }
+    &__card {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  }
+   &__profile_img {
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px 10px 10px 10px;
+   }
+   &__sns {
+    display: inline-block;
+    letter-spacing: 1em;
+   }
+   &__tag {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #c0da74;
+    transition: .4s;
+   }
+   &__tag:hover {
+    background: #1ec7bb;
+   }
+
+   &__fee {
+    max-width: 18rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
+   }
+
+   &__table {
+  margin-left: 10%;
+  margin-right:  10%;
+  }
+
+}

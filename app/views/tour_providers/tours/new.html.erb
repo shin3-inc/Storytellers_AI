@@ -1,0 +1,58 @@
+<div class="continer tour_provider">
+
+	<div class="row tour_provider__top_image"></div>
+
+	<div class="row tour_provider__title justify-content-center">
+		<h3 class="col-auto">ツアー新規登録</h3>
+	</div>
+
+
+  <%= form_with(model: @tour, url: tour_providers_tours_path(@tour), local: true) do |f| %>
+
+     <form>
+        <div class="align-self-start offset-1 form-group">
+
+          <div class="row  tour_provider__row">
+            <%= f.attachment_field :image, id: "new-image" %>
+      			<%= attachment_image_tag @tour, :image, :fill, 350, 350, fallback: "no_image.jpg", size:"350x350", class: "product-image" %>
+    		  </div>
+          <div class="row  tour_provider__row">
+              <%= f.label :ツアー見出し文,class: "col-2" %>
+              <%= f.text_field :tour_main_phrase, autocomplete: "tour_main_phrase", class: "form-contorol  offset-2 col-6" %>
+          </div>
+          <div class="row  tour_provider__row">
+               <%= f.label :ツアー紹介文,class: "col-4" %>
+               <%= f.text_field :tour_introduction, autocomplete: "tour_introduction", class: "form-contorol" %>
+          </div>
+          <div class="row  tour_provider__row">
+               <%= f.label :注意事項,class: "col-4" %>
+               <%= f.text_field :note, autocomplete: "note", class: "form-contorol" %>
+          </div>
+          <div class="row  tour_provider__row">
+               <%= f.label :ツアー料金（一人当たり）,class: "col-4" %>
+               <%= f.text_field :fee, autocomplete: "fee", class: "form-contorol" %>
+          </div>
+
+          <div class="row  tour_provider__row">
+            <%= f.label :ツアーコース例,class: "col-4" %>
+            <%= f.fields_for :courses do |t| %>
+                <%= render partial:"course_fields", locals: {  f: t } %>
+            <% end %>
+          </div>
+          <div class="row  tour_provider__row justify-content-center">
+            <%= link_to_add_association "コースを追加", f, :courses, class: "btn btn-info col-2" %>
+          </div>
+
+      </div>
+       <div class="actions row tour_provider__title justify-content-center">
+            <%= f.submit "登録", class: "btn btn-info form-contorol col-auto" %>
+       </div>
+     </form>
+  <% end %>
+
+
+
+
+
+
+</div>
